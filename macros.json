@@ -1,0 +1,67 @@
+{
+  "commands": [
+    {
+      "name": "class",
+      "response": "class $d:\n  def __init__(self):\n    ",
+      "parameters": [
+        "d"
+      ]
+    },
+    {
+      "name": "while",
+      "response": "while $d:\n  ",
+      "parameters": [
+        "d"
+      ]
+    },
+    {
+      "name": "fori",
+      "response": "for i in $d:\n  ",
+      "parameters": [
+        "d"
+      ]
+    },
+    {
+      "name": "forp",
+      "response": "for i in range($d):\n  print(i)",
+      "parameters": [
+        "d"
+      ]
+    },
+    {
+      "name": "for",
+      "response": "for i in range($d):\n  ",
+      "parameters": [
+        "d"
+      ]
+    },
+    {
+      "name": "get",
+      "response": "def get_$d():\n   return self.$d",
+      "parameters": [
+        "d"
+      ]
+    },
+    {
+      "name": "set",
+      "response": "def set_$d($d):\n   self.$d = $d",
+      "parameters": [
+        "d"
+      ]
+    },
+    {
+      "name": "get",
+      "response": "def get_$d():\n   return self.$d",
+      "parameters": [
+        "d"
+      ]
+    },
+    {
+      "name": "enum",
+      "response": "for index, element in $d:\n    ",
+      "parameters": [
+        "d"
+      ]
+    }
+  ]
+}

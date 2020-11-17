@@ -1,23 +1,19 @@
 from command import Command
 from pynput import keyboard
 from pynput.keyboard import Controller, Key
-import time
+from filemanager import read_to_list, write
 
 
 class Keylogger:
     def __init__(self):
         self.current_command = ""
-        self.commands = [Command("for", ["d"], "for i in range($d):\n  "),
-                         Command("fori", ["d"], "for i in $d:\n  "),
-                         Command("class", ["d"], "class $d:\n  def __init__(self):\n    "),
-                         Command("forp", ["d"], "for i in range($d):\n  print(i)"),
-                         Command("get", ["d"], "def get_$d():\n   return self.$d"),
-                         Command("set", ["d"], "def set_$d($d):\n   self.$d = $d"),
-                         Command("while", ["d"], "while $d:\n  ")]
+        self.commands = read_to_list("macros.json")
         self.commands.sort(key=lambda x: len(x.name), reverse=True)
         self.listener = keyboard.Listener(on_press=self.on_key_press)
         self.controller = Controller()
         self.sending_command = False
+
+    def start(self):
         self.listener.start()
         self.listener.join()
 
@@ -47,6 +43,10 @@ class Keylogger:
             if self.current_command == command.name:
                 print(command.response)
                 self.send_command(command)
+
+    def add_macro(self, name, parameters, response):
+        self.commands.append(Command(name, parameters, response))
+        write("macros.json", self.commands)
 
     def send_command(self, command):
         self.current_command = ""

