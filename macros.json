@@ -1,93 +1,101 @@
 {
   "commands": [
     {
+      "name": "if",
+      "response": "if($d){\n    \n}",
+      "parameters": [
+        "d"
+      ],
+      "category": "java"
+    },
+    {
+      "name": "ife",
+      "response": "if($d){\n    \n}\nelse{\n   \n}",
+      "parameters": [
+        "d"
+      ],
+      "category": "java"
+    },
+    {
       "name": "class",
-      "category": "python",
       "response": "class $d:\n  def __init__(self):\n    ",
       "parameters": [
         "d"
-      ]
+      ],
+      "category": "python"
     },
     {
       "name": "while",
-      "category": "python",
       "response": "while $d:\n  ",
       "parameters": [
         "d"
-      ]
+      ],
+      "category": "python"
     },
     {
       "name": "fori",
-      "category": "python",
       "response": "for i in $d:\n  ",
       "parameters": [
         "d"
-      ]
+      ],
+      "category": "python"
     },
     {
       "name": "forp",
-      "category": "python",
       "response": "for i in range($d):\n  print(i)",
       "parameters": [
         "d"
-      ]
+      ],
+      "category": "python"
     },
     {
       "name": "enum",
-      "category": "python",
       "response": "for index, element in $d:\n    ",
       "parameters": [
         "d"
-      ]
-    },
-    {
-      "name": "for",
-      "category": "python",
-      "response": "for i in range($d):\n  ",
-      "parameters": [
-        "d"
-      ]
-    },
-    {
-      "name": "get",
-      "category": "python",
-      "response": "def get_$d():\n   return self.$d",
-      "parameters": [
-        "d"
-      ]
-    },
-    {
-      "name": "set",
-      "category": "python",
-      "response": "def set_$d($d):\n   self.$d = $d",
-      "parameters": [
-        "d"
-      ]
-    },
-    {
-      "name": "get",
-      "category": "python",
-      "response": "def get_$d():\n   return self.$d",
-      "parameters": [
-        "d"
-      ]
+      ],
+      "category": "python"
     },
     {
       "name": "elif",
-      "category": "python",
       "response": "if $d:\n    \nelif $e:",
       "parameters": [
         "d",
         "e"
-      ]
+      ],
+      "category": "python"
     },
     {
-      "name": "if",
-      "category": "java",
-      "response": "if($d){\n    }:",
+      "name": "for",
+      "response": "for i in range($d):\n  ",
       "parameters": [
         "d"
-      ]
+      ],
+      "category": "python"
+    },
+    {
+      "name": "get",
+      "response": "def get_$d():\n   return self.$d",
+      "parameters": [
+        "d"
+      ],
+      "category": "python"
+    },
+    {
+      "name": "set",
+      "response": "def set_$d($d):\n   self.$d = $d",
+      "parameters": [
+        "d"
+      ],
+      "category": "python"
+    },
+    {
+      "name": "get",
+      "response": "def get_$d():\n   return self.$d",
+      "parameters": [
+        "d"
+      ],
+      "category": "python"
     }
   ]
 }

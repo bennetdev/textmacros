@@ -7,7 +7,7 @@ class Command:
 
     def matches(self, string):
         namelen = len(self.name)
-        return string[:namelen] == self.name and len(string.split(self.name)[1].split("$")) >= len(self.parameters)
+        return string[:namelen] == self.name and len(list(filter(None, string.split(self.name)[1].strip().split("$")))) >= len(self.parameters)
 
     def get_response(self, params):
         response = self.response

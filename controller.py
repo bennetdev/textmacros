@@ -47,7 +47,9 @@ class Controller:
             parameters = self.main_window.macros_table.item(i, 1).text().split(",")
             response = self.main_window.macros_table.item(i, 2).text()
             commands.append(Command(name, parameters, response,
-                                    self.keylogger.get_categories()[self.main_window.category_box.currentIndex()]))
+                     self.keylogger.get_categories()[self.main_window.category_box.currentIndex()]))
+        for command in self.keylogger.get_commands_except_category(self.keylogger.get_categories()[self.main_window.category_box.currentIndex()]):
+            commands.append(command)
         print(commands)
         write("macros.json", commands)
 

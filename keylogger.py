@@ -20,6 +20,7 @@ class Keylogger:
     def on_key_press(self, key):
         if not self.sending_command:
             if key == keyboard.Key.space:
+                print(self.current_command)
                 for command in self.commands:
                     if command.matches(self.current_command):
                         print(self.current_command)
@@ -51,6 +52,9 @@ class Keylogger:
 
     def get_commands_by_category(self, category):
         return [command for command in self.commands if command.category == category]
+
+    def get_commands_except_category(self, category):
+        return [command for command in self.commands if command.category != category]
 
     def add_macro(self, name, parameters, response):
         self.commands.append(Command(name, parameters, response))
