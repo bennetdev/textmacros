@@ -2,6 +2,7 @@
   "commands": [
     {
       "name": "class",
+      "category": "python",
       "response": "class $d:\n  def __init__(self):\n    ",
       "parameters": [
         "d"
@@ -9,6 +10,7 @@
     },
     {
       "name": "while",
+      "category": "python",
       "response": "while $d:\n  ",
       "parameters": [
         "d"
@@ -16,6 +18,7 @@
     },
     {
       "name": "fori",
+      "category": "python",
       "response": "for i in $d:\n  ",
       "parameters": [
         "d"
@@ -23,13 +26,23 @@
     },
     {
       "name": "forp",
+      "category": "python",
       "response": "for i in range($d):\n  print(i)",
       "parameters": [
         "d"
       ]
     },
     {
+      "name": "enum",
+      "category": "python",
+      "response": "for index, element in $d:\n    ",
+      "parameters": [
+        "d"
+      ]
+    },
+    {
       "name": "for",
+      "category": "python",
       "response": "for i in range($d):\n  ",
       "parameters": [
         "d"
@@ -37,6 +50,7 @@
     },
     {
       "name": "get",
+      "category": "python",
       "response": "def get_$d():\n   return self.$d",
       "parameters": [
         "d"
@@ -44,6 +58,7 @@
     },
     {
       "name": "set",
+      "category": "python",
       "response": "def set_$d($d):\n   self.$d = $d",
       "parameters": [
         "d"
@@ -51,14 +66,25 @@
     },
     {
       "name": "get",
+      "category": "python",
       "response": "def get_$d():\n   return self.$d",
       "parameters": [
         "d"
       ]
     },
     {
-      "name": "enum",
-      "response": "for index, element in $d:\n    ",
+      "name": "elif",
+      "category": "python",
+      "response": "if $d:\n    \nelif $e:",
+      "parameters": [
+        "d",
+        "e"
+      ]
+    },
+    {
+      "name": "if",
+      "category": "java",
+      "response": "if($d){\n    }:",
       "parameters": [
         "d"
       ]

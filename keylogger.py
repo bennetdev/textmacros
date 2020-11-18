@@ -23,13 +23,15 @@ class Keylogger:
                 for command in self.commands:
                     if command.matches(self.current_command):
                         print(self.current_command)
-                        param = self.current_command.split(command.name)[1]
+                        params = self.current_command.split(command.name)[1].split("$")
                         for i in range(len(self.current_command) + 1):
                             self.controller.tap(Key.backspace)
-                        self.controller.type(command.get_response(param))
+                        self.controller.type(command.get_response(params))
                         break
                 self.current_command = ""
             elif key == keyboard.Key.backspace:
+                pass
+            elif key == keyboard.Key.shift:
                 pass
             else:
                 try:
@@ -37,12 +39,18 @@ class Keylogger:
                 except:
                     self.current_command = ""
 
+    def get_categories(self):
+        return list(set([command.category for command in self.commands]))
+
     def check_command(self):
         print("check")
         for command in self.commands:
             if self.current_command == command.name:
                 print(command.response)
                 self.send_command(command)
+
+    def get_commands_by_category(self, category):
+        return [command for command in self.commands if command.category == category]
 
     def add_macro(self, name, parameters, response):
         self.commands.append(Command(name, parameters, response))
