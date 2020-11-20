@@ -64,7 +64,7 @@ class Ui_MainWindow(object):
         self.load_btn.clicked.connect(self.controller.load)
         self.add_btn.clicked.connect(self.controller.add)
         self.addcategory_btn.clicked.connect(self.controller.add_category)
-        self.category_box.currentIndexChanged.connect(self.controller.category_changed)
+
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)

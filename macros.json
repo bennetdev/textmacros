@@ -1,22 +1,6 @@
 {
   "commands": [
     {
-      "name": "if",
-      "response": "if($d){\n    \n}",
-      "parameters": [
-        "d"
-      ],
-      "category": "java"
-    },
-    {
-      "name": "ife",
-      "response": "if($d){\n    \n}\nelse{\n   \n}",
-      "parameters": [
-        "d"
-      ],
-      "category": "java"
-    },
-    {
       "name": "class",
       "response": "class $d:\n  def __init__(self):\n    ",
       "parameters": [
@@ -66,6 +50,16 @@
       "category": "python"
     },
     {
+      "name": "tern",
+      "response": "$v if $i else $e",
+      "parameters": [
+        "v",
+        "i",
+        "e"
+      ],
+      "category": "python"
+    },
+    {
       "name": "for",
       "response": "for i in range($d):\n  ",
       "parameters": [
@@ -96,6 +90,68 @@
         "d"
       ],
       "category": "python"
+    },
+    {
+      "name": "compre",
+      "response": "[$v for $v in $l]",
+      "parameters": [
+        "v",
+        "l"
+      ],
+      "category": "python"
+    },
+    {
+      "name": "sghlg",
+      "response": "Sehr geehrter Herr $d,\nLiebe Gr\u00fc\u00dfe,\n$e",
+      "parameters": [
+        "d",
+        "e"
+      ],
+      "category": "daily"
+    },
+    {
+      "name": "mfg",
+      "response": "Mit freundlichen Gr\u00fc\u00dfen,",
+      "parameters": [],
+      "category": "daily"
+    },
+    {
+      "name": "sgh",
+      "response": "Sehr geehrter Herr $d,",
+      "parameters": [
+        "d"
+      ],
+      "category": "daily"
+    },
+    {
+      "name": "sgf",
+      "response": "Sehr geehrte Frau $d,",
+      "parameters": [
+        "d"
+      ],
+      "category": "daily"
+    },
+    {
+      "name": "ife",
+      "response": "if($d){\n    \n}\nelse{\n   \n}",
+      "parameters": [
+        "d"
+      ],
+      "category": "java"
+    },
+    {
+      "name": "lg",
+      "response": "Liebe Gr\u00fc\u00dfe,",
+      "parameters": [],
+      "category": "daily"
+    },
+    {
+      "name": "if",
+      "response": "if($d){\n    \n}",
+      "parameters": [
+        "d"
+      ],
+      "category": "java"
     }
   ]
 }

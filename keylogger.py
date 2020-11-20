@@ -23,10 +23,8 @@ class Keylogger:
     def on_key_press(self, key):
         if not self.sending_command:
             if key == keyboard.Key.space:
-                print(self.current_command)
                 for command in self.commands:
                     if command.matches(self.current_command):
-                        print(self.current_command)
                         params = self.current_command.split(command.name)[1].split("$")
                         for i in range(len(self.current_command) + 1):
                             self.controller.tap(Key.backspace)
@@ -36,6 +34,8 @@ class Keylogger:
             elif key == keyboard.Key.backspace:
                 pass
             elif key == keyboard.Key.shift:
+                pass
+            elif key == keyboard.Key.enter:
                 pass
             elif key == keyboard.Key.f8:
                 exit(0)
@@ -49,10 +49,8 @@ class Keylogger:
         return list(set([command.category for command in self.commands]))
 
     def check_command(self):
-        print("check")
         for command in self.commands:
             if self.current_command == command.name:
-                print(command.response)
                 self.send_command(command)
 
     def get_commands_by_category(self, category):

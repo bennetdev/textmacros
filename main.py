@@ -1,3 +1,3 @@
 from keylogger import Keylogger
 
-Keylogger().start(category="daily")
+Keylogger().start(category="python")
