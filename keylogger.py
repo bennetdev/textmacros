@@ -13,7 +13,9 @@ class Keylogger:
         self.controller = Controller()
         self.sending_command = False
 
-    def start(self):
+    def start(self, category=None):
+        if category is not None:
+            self.commands = self.get_commands_by_category(category)
         self.listener.start()
         self.listener.join()
 
