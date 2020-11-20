@@ -9,6 +9,7 @@ class Keylogger:
         self.current_command = ""
         self.commands = read_to_list("macros.json")
         self.commands.sort(key=lambda x: len(x.name), reverse=True)
+        self.categories = self.get_categories()
         self.listener = keyboard.Listener(on_press=self.on_key_press)
         self.controller = Controller()
         self.sending_command = False
@@ -36,6 +37,8 @@ class Keylogger:
                 pass
             elif key == keyboard.Key.shift:
                 pass
+            elif key == keyboard.Key.f8:
+                exit(0)
             else:
                 try:
                     self.current_command += key.char
